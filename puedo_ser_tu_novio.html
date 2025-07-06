@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Puedo ser tu novio?</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+      padding-top: 10%;
+    }
+    h1 {
+      font-size: 3em;
+      color: #ff3366;
+      margin-bottom: 50px;
+    }
+    .btn {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 15px;
+      margin: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-si {
+      background-color: #4CAF50;
+      color: white;
+    }
+    .btn-no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+    .happy {
+      display: none;
+      font-size: 2em;
+      color: #ff66cc;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Puedo ser tu novio?</h1>
+  <button class="btn btn-si" onclick="responderSi()">Sí 💖</button>
+  <button class="btn btn-no" id="noBtn" onmouseover="moverBoton()">No 💔</button>
+  <div class="happy" id="respuestaFeliz">¡Yujuuu! 💘 ¡Soy muy feliz ahora!</div>
+
+  <script>
+    function responderSi() {
+      document.getElementById('respuestaFeliz').style.display = 'block';
+    }
+
+    function moverBoton() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.left = `${x}px`;
+      btn.style.top = `${y}px`;
+    }
+  </script>
+</body>
+</html>
